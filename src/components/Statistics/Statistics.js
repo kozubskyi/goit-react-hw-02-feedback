@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Notification from '../Notification/Notification';
 
 import './Statistics.scss';
@@ -24,6 +26,14 @@ const Statistics = ({ feedbackState, total, positivePercentage, capitalizeFirstL
       )}
     </>
   );
+};
+
+Statistics.propTypes = {
+  feedbackState: PropTypes.shape().isRequired,
+  total: PropTypes.func.isRequired,
+  positivePercentage: PropTypes.func.isRequired,
+  capitalizeFirstLetter: PropTypes.func.isRequired,
+  stateKeys: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default Statistics;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './FeedbackOptions.scss';
 
@@ -12,6 +13,12 @@ const FeedbackOptions = ({ stateKeys, onLeaveFeedback, capitalizeFirstLetter }) 
       ))}
     </>
   );
+};
+
+FeedbackOptions.propTypes = {
+  stateKeys: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+  capitalizeFirstLetter: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;
